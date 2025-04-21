@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { Icon } from '@iconify/react';
 import { Anchor, Text, Title } from '@mantine/core';
 import classes from './Welcome.module.css';
 
@@ -5,19 +7,18 @@ export function Welcome() {
   return (
     <>
       <Title className={classes.title} ta="center" mt={100}>
-        Welcome to{' '}
         <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
-          Mantine
+          Lobox
         </Text>
+        {'  '}
+        <span className="text-[#5384EE]">Assignment</span>
       </Title>
-      <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-        This starter Next.js project includes a minimal setup for server side rendering, if you want
-        to learn more on Mantine + Next.js integration follow{' '}
-        <Anchor href="https://mantine.dev/guides/next/" size="lg">
-          this guide
-        </Anchor>
-        . To get started edit page.tsx file.
-      </Text>
+      <div className="flex items-center justify-center mx-auto mt-8">
+        You can see the source code here:
+        <Link prefetch={false} className="ml-2" href="https://github.com/z10mx7/lbx-assignment">
+          <Icon icon="fa:github" className="text-3xl text-gray-800" />
+        </Link>
+      </div>
     </>
   );
 }
